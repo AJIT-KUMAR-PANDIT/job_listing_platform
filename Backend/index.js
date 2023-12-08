@@ -1,13 +1,29 @@
 const express = require("express");
 const dotenv = require("dotenv").config();
 
-const health = require('./Routes/routes');
+const {health,register,login} = require('./Routes/routes');
+const routeNotFoundMiddlewareware = require("./Middleware/routeNotFoundMiddleware");
 const mongoose  = require("mongoose");
+
+
+
+const bodyParser = require('body-parser');
 
 const app = express();
 
 const port = process.env.PORT; 
 const MONGO_DB_URL = process.env.MONGO_DB_URL;
+
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+
+
+
+
+
+
 
 
 
@@ -16,9 +32,16 @@ app.get('/',(req,res)=>{
     res.redirect('/health');
 });
 
-app.use('/',health);
+//____________________________________________________________________ [all apis]
+app.use('/health',health);
+app.use('/register',register);
+app.use('/login',login);
+
+//____________________________________________________________________ [route not found apis]
+app.use(routeNotFoundMiddlewareware);
 
 
+//____________________________________________________________________ [server starting point]
 app.listen(port,()=>{
 
     mongoose.connect(MONGO_DB_URL)
