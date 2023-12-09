@@ -9,8 +9,9 @@ secretKey = process.env.SECRET_KEY;
 
 const login = async (req, res) => {
     const { email, password } = req.body;
+    const user = await User.findOne({ email });
 
-    if (await bcrypt.compare(password, await User.findOne({ email }).then((user) => user.password))) {
+    if (user && (await bcrypt.compare(password, user.password))) {
         hashedPassword = await bcrypt.hash(password, 10);
         const token = jwt.sign({ email , hashedPassword }, secretKey, { expiresIn: '1h' });
         
