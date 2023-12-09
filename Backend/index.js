@@ -2,7 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv").config();
 
 const {health,register,login} = require('./Routes/routes');
-const routeNotFoundMiddlewareware = require("./Middleware/routeNotFoundMiddleware");
+const errorHandler = require("./Middleware/errorHandler");
 const mongoose  = require("mongoose");
 
 
@@ -37,8 +37,8 @@ app.use('/health',health);
 app.use('/register',register);
 app.use('/login',login);
 
-//____________________________________________________________________ [route not found apis]
-app.use(routeNotFoundMiddlewareware);
+//____________________________________________________________________ [errorHandler apis]
+app.use(errorHandler);
 
 
 //____________________________________________________________________ [server starting point]
