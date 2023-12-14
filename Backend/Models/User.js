@@ -10,6 +10,7 @@ const userSchema = new Schema({
     email: {
         type: String,
         required: true,
+        unique: true,
     },
     mobile: {
         type: Number,
@@ -20,5 +21,5 @@ const userSchema = new Schema({
         required: true,
     },
 });
-const User = mongoose.model("JobListiningPlatform", userSchema);
+const User = mongoose.model("JobListiningPlatform_User", userSchema);
 module.exports = User;

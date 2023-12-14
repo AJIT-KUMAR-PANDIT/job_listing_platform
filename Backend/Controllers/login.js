@@ -21,10 +21,11 @@ const login = async (req, res) => {
         }).status(200).json({
             status: 200,
             message: "User logged in successfully",
+            recruiterName:user.name,
             token:token
         });
     } else {
-        res.status(401).json({
+        res.clearCookie('token').status(401).json({
             status: 401,
             message: "Invalid email or password",
 

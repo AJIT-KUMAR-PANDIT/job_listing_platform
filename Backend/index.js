@@ -1,7 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv").config();
 
-const {health,register,login} = require('./Routes/routes');
+const {health,register,login,jobPost, auth, jobView, jobUpdate} = require('./Routes/routes');
 const errorHandler = require("./Middleware/errorHandler");
 const mongoose  = require("mongoose");
 
@@ -36,6 +36,9 @@ app.get('/',(req,res)=>{
 app.use('/health',health);
 app.use('/register',register);
 app.use('/login',login);
+app.use('/jobPost',auth,jobPost);
+app.use('/jobView',jobView);
+app.use('/jobUpdate',jobUpdate);
 
 //____________________________________________________________________ [errorHandler apis]
 app.use(errorHandler);

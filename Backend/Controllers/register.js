@@ -30,6 +30,7 @@ const register = async (req, res) => {
         res.status(200).json({
             status: 200,
             message: "User created successfully",
+            recruiterName:userData.name,
         });
     } catch (err) {
         res.status(500).json({
