@@ -4,6 +4,7 @@ const dotenv = require("dotenv").config();
 const {health,register,login,jobPost, auth, jobView, jobUpdate,postDiscrip} = require('./Routes/routes');
 const errorHandler = require("./Middleware/errorHandler");
 const mongoose  = require("mongoose");
+const cors = require('cors');
 
 
 
@@ -33,6 +34,7 @@ app.get('/',(req,res)=>{
 });
 
 //____________________________________________________________________ [all apis]
+app.use(cors());
 app.use('/health',health);
 app.use('/register',register);
 app.use('/login',login);

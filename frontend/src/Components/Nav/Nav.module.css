@@ -1,0 +1,56 @@
+.nav{
+    background-image: url("../../assets/nav.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 11vh;
+    width: 100vw;
+position:fixed;
+top: 0px;
+}
+
+.logo{
+    
+    color: #FFF;
+text-align: center;
+font-family: DM Sans;
+font-size: 30px;
+font-style: normal;
+font-weight: 700;
+line-height: 144.023%; /* 43.207px */
+
+position: fixed;
+left: 11px;
+}
+
+.login{
+    color: #FFF;
+text-align: center;
+font-family: DM Sans;
+font-size: 23px;
+font-style: normal;
+font-weight: 500;
+line-height: 144.023%; /* 33.125px */
+
+
+border-radius: 7px;
+border: 2px solid #FFF;
+background: #FF6B6B;
+}
+
+.register{
+    color: #ED5353;
+text-align: center;
+font-family: DM Sans;
+font-size: 23px;
+font-style: normal;
+font-weight: 500;
+line-height: 144.023%; /* 33.125px */
+
+border-radius: 7px;
+background: #FFF;
+}
+
+.right{
+    position: fixed;
+    right: 11px;
+}

@@ -1,0 +1,62 @@
+.input{
+    width: 599px;
+height: 41px;
+flex-shrink: 0;
+
+color: #525252;
+font-family: DM Sans;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: 144.023%; 
+
+/* 28.805px */
+}
+
+.input::placeholder{
+    margin-left: 21px;
+}
+
+.terms{
+    color: #525252;
+font-family: DM Sans;
+font-size: 16.852px;
+font-style: normal;
+font-weight: 400;
+line-height: 139.688%; /* 23.541px */
+letter-spacing: 0.337px;
+}
+
+.button{
+    color: #FFF;
+    text-align: center;
+    font-family: DM Sans;
+    font-size: 27.793px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 144.023%; /* 40.028px */
+    
+    border-radius: 5px;
+background: #ED5353;
+}
+
+.haveAccount{
+    color: #525252;
+text-align: center;
+font-family: DM Sans;
+font-size: 21px;
+font-style: normal;
+font-weight: 500;
+line-height: 144.023%; /* 30.245px */
+}
+
+.signIn{
+    color: #000;
+    text-align: center;
+    font-family: DM Sans;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 144.023%; /* 30.245px */
+    text-decoration-line: underline;
+}
